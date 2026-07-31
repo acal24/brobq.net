@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="description" content="The BRO-B-Q Hall of Flame." />
+  <title>Hall of Flame · BRO-B-Q</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/hall.css" />
+</head>
+
+<body>
+  <main>
+    <header class="hall-hero">
+      <a class="back-link" href="../">← Back to the Pit</a>
+      <p class="kicker">BRO-B-Q</p>
+      <h1>Hall of Flame</h1>
+      <p class="intro">One name is added each year.</p>
+    </header>
+
+    <section class="honorees" aria-labelledby="brokayest-title">
+      <p id="brokayest-title" class="section-label">Brokayest Bro</p>
+
+      <article class="honoree current">
+        <div class="year">MMXXV</div>
+
+        <div class="portrait-wrap">
+          <img src="../assets/images/hall/rich.png" alt="Rich holding the Brokayest Bro trophy" />
+          <span class="trophy" aria-label="Current holder" title="Current holder">
+            <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+              <path d="M18 8h28v8h8v8c0 9-6 16-15 18v6h9v8H16v-8h9v-6C16 40 10 33 10 24v-8h8V8Zm8 8v13c0 7 3 11 6 11s6-4 6-11V16H26Zm-8 8h-2c0 5 2 8 6 10-2-3-4-6-4-10Zm28 0c0 4-2 7-4 10 4-2 6-5 6-10h-2Z"/>
+            </svg>
+          </span>
+        </div>
+
+        <h2>Rich</h2>
+        <p class="quote">“My BBQ is better than yours.”</p>
+      </article>
+
+      <article class="honoree">
+        <div class="year">MMXXIV</div>
+
+        <div class="portrait-wrap">
+          <img src="../assets/images/hall/ivan.png" alt="Ivan wearing a hat and sunglasses" />
+        </div>
+
+        <h2>Ivan</h2>
+        <p class="quote">“Tacos of Legend.”</p>
+      </article>
+    </section>
+
+    <section class="ogs">
+      <p class="section-label">OGs</p>
+      <p class="og-line">ACal <span>•</span> Rich <span>•</span> Ivan <span>•</span> Big Jim <span>•</span> JPal <span>•</span> Westicles</p>
+    </section>
+
+    <footer>
+      <p>The fire changes hands.</p>
+      <p>The tradition stays.</p>
+    </footer>
+  </main>
+</body>
+</html>
