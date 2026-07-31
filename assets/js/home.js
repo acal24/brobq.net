@@ -4,12 +4,19 @@
   const SUCCESS_HOLD_MS = 2000;
   const FADE_MS = 900;
 
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
   const gate = document.getElementById("gate");
   const clubhouse = document.getElementById("clubhouse");
+  const chapters = document.getElementById("chapters");
   const form = document.getElementById("phrase-form");
   const input = document.getElementById("phrase");
   const message = document.getElementById("gate-message");
   const resetButton = document.getElementById("reset-gate");
+  const chaptersOpen = document.getElementById("chapters-open");
+  const chaptersBack = document.getElementById("chapters-back");
 
   const wrongMessages = [
     "I knew Connecticut Broadleaf was your thing.",
@@ -21,10 +28,27 @@
   const normalize = (value) =>
     value.trim().toLowerCase().replace(/[.!'’"]/g, "");
 
+  function forceTop() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    window.setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
+  }
+
   function revealClubhouse() {
     gate.hidden = true;
+    chapters.hidden = true;
     clubhouse.hidden = false;
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    forceTop();
   }
 
   function showClubhouse({ animate = true } = {}) {
@@ -48,6 +72,8 @@
 
   if (localStorage.getItem(STORAGE_KEY) === "true") {
     showClubhouse({ animate: false });
+  } else {
+    forceTop();
   }
 
   form.addEventListener("submit", (event) => {
@@ -67,8 +93,21 @@
     input.select();
   });
 
+  chaptersOpen.addEventListener("click", () => {
+    clubhouse.hidden = true;
+    chapters.hidden = false;
+    forceTop();
+  });
+
+  chaptersBack.addEventListener("click", () => {
+    chapters.hidden = true;
+    clubhouse.hidden = false;
+    forceTop();
+  });
+
   resetButton.addEventListener("click", () => {
     localStorage.removeItem(STORAGE_KEY);
+    chapters.hidden = true;
     clubhouse.hidden = true;
     gate.hidden = false;
     gate.classList.remove("is-opening");
@@ -76,7 +115,7 @@
     message.textContent = "";
     message.classList.remove("success");
     input.value = "";
-    window.scrollTo(0, 0);
+    forceTop();
     input.focus();
   });
 })();
