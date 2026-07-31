@@ -1,61 +1,61 @@
 :root {
-  --pit-black: #0b0b0b;
+  --black: #0b0b0b;
   --bone: #f2efe6;
   --ash: #c8c0b4;
-  --smoke: #78736d;
+  --smoke: #77726b;
   --bourbon: #ad7132;
-  --line: rgba(242, 239, 230, 0.16);
+  --line: rgba(173, 113, 50, 0.42);
 }
 
 * { box-sizing: border-box; }
 
 html {
-  background: var(--pit-black);
+  background: var(--black);
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top, rgba(173, 113, 50, 0.08), transparent 30%),
-    var(--pit-black);
   color: var(--bone);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(173,113,50,.08), transparent 26%),
+    var(--black);
   font-family: "Inter", sans-serif;
 }
 
-.hall-hero,
-.honorees,
-.ogs,
-footer {
-  width: min(880px, 100%);
-  margin: 0 auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+main {
+  min-height: 100vh;
 }
 
 .hall-hero {
-  padding-top: 2.25rem;
-  padding-bottom: 4.75rem;
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5.5rem;
   text-align: center;
+  animation: rise .7s ease both;
 }
 
 .back-link {
-  display: block;
-  margin-bottom: 4rem;
+  display: inline-block;
+  margin-bottom: 4.5rem;
   color: var(--smoke);
   text-decoration: none;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
+  font-size: .69rem;
+  letter-spacing: .17em;
   text-transform: uppercase;
 }
 
-.kicker,
-.section-label {
+.back-link:hover,
+.back-link:focus-visible { color: var(--bourbon); }
+
+.brand,
+.section-label,
+.year {
   margin: 0;
   color: var(--bourbon);
-  font-size: 0.72rem;
+  font-size: .74rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: .28em;
   text-transform: uppercase;
 }
 
@@ -66,144 +66,201 @@ h2 {
 }
 
 h1 {
-  margin-top: 0.8rem;
-  font-size: clamp(4.1rem, 15vw, 8rem);
-  line-height: 0.88;
-  letter-spacing: 0.035em;
+  margin-top: .75rem;
+  font-size: clamp(4rem, 13vw, 8rem);
+  line-height: .9;
 }
 
-.intro {
-  margin: 1.35rem 0 0;
+.subhead {
+  margin: 1.5rem 0 0;
   color: var(--ash);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.25rem, 4vw, 1.8rem);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-style: italic;
 }
 
 .honorees {
-  border-top: 1px solid var(--line);
-}
-
-.honorees > .section-label {
-  padding-top: 2.5rem;
-  text-align: center;
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .honoree {
-  position: relative;
-  padding: 4rem 0;
-  border-bottom: 1px solid var(--line);
-  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(260px, 480px) minmax(230px, 1fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: center;
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--line);
+  animation: rise .75s ease both;
 }
 
-.year {
-  margin-bottom: 1.3rem;
-  color: var(--bourbon);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.12em;
-}
+.honoree:nth-child(2) { animation-delay: .12s; }
 
 .portrait-wrap {
   position: relative;
-  width: min(290px, 72vw);
-  margin: 0 auto 1.6rem;
+  width: min(100%, 460px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border: 2px solid var(--bourbon);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(173,113,50,.045);
+  overflow: visible;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .portrait-wrap img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.honoree:hover .portrait-wrap {
+  transform: scale(1.025);
+  box-shadow: 0 0 0 10px rgba(173,113,50,.075);
+}
+
+.current .portrait-wrap {
+  box-shadow:
+    0 0 0 8px rgba(173,113,50,.07),
+    0 0 60px rgba(173,113,50,.11);
 }
 
 .trophy {
   position: absolute;
-  right: 3%;
-  bottom: 3%;
+  right: 2%;
+  bottom: 2%;
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  border: 1px solid rgba(173, 113, 50, 0.7);
+  width: 76px;
+  height: 76px;
+  border: 1px solid var(--bourbon);
   border-radius: 50%;
-  background: var(--pit-black);
-  box-shadow: 0 0 0 5px rgba(11, 11, 11, 0.88);
+  background: var(--black);
+  color: var(--bourbon);
+  opacity: 0;
+  animation: trophy-in .65s ease .65s forwards;
 }
 
 .trophy svg {
-  width: 28px;
-  fill: var(--bourbon);
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.honoree-copy {
+  text-align: left;
+}
+
+.year {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
 }
 
 .honoree h2 {
-  font-size: clamp(3.6rem, 12vw, 6rem);
-  line-height: 0.95;
+  margin-top: .55rem;
+  font-size: clamp(4rem, 9vw, 7rem);
+  line-height: .9;
 }
 
-.quote {
-  margin: 1rem auto 0;
+.detail {
+  max-width: 430px;
+  margin: 1.25rem 0 0;
   color: var(--ash);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.45rem, 5vw, 2.15rem);
+  font-size: clamp(1.45rem, 3.5vw, 2.15rem);
   font-style: italic;
+  line-height: 1.25;
 }
 
 .ogs {
-  padding-top: 4.75rem;
-  padding-bottom: 4.75rem;
-  text-align: center;
-}
-
-.og-line {
-  margin: 1.35rem auto 0;
-  color: var(--bone);
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.25rem, 4.4vw, 1.85rem);
-  line-height: 1.8;
-}
-
-.og-line span {
-  padding: 0 0.35em;
-  color: var(--bourbon);
-}
-
-footer {
-  padding-top: 1rem;
-  padding-bottom: 6.5rem;
+  width: min(1060px, calc(100% - 2.5rem));
+  margin: 1.5rem auto 0;
+  padding: 4.5rem 1rem;
   border-top: 1px solid var(--line);
   text-align: center;
 }
 
-footer p {
-  margin: 0.1rem 0;
+.ogs p:last-child {
+  margin: 1.5rem auto 0;
+  color: var(--bone);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 7vw, 3.8rem);
-  line-height: 1;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.7;
 }
 
-footer p:last-child {
+.ogs span {
+  margin: 0 .42rem;
   color: var(--bourbon);
 }
 
-@media (max-width: 520px) {
-  .hall-hero {
-    padding-top: 1.5rem;
-    padding-bottom: 3.75rem;
-  }
+footer {
+  padding: 6rem 1.25rem 8rem;
+  text-align: center;
+}
 
-  .back-link {
-    margin-bottom: 3rem;
-  }
+footer p {
+  margin: .1rem 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1;
+}
+
+footer p:last-child { color: var(--bourbon); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes trophy-in {
+  from { opacity: 0; transform: scale(.86); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 720px) {
+  .hall-hero { padding-bottom: 4rem; }
+  .back-link { margin-bottom: 3.25rem; }
 
   .honoree {
-    padding: 3.4rem 0;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 0;
+    text-align: center;
   }
 
+  .portrait-wrap {
+    width: min(86vw, 420px);
+  }
+
+  .honoree-copy { text-align: center; }
+
+  .detail { margin-left: auto; margin-right: auto; }
+
   .trophy {
-    width: 46px;
-    height: 46px;
+    width: 62px;
+    height: 62px;
   }
 
   .trophy svg {
-    width: 24px;
+    width: 31px;
+    height: 31px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hall-hero,
+  .honoree,
+  .trophy {
+    animation: none;
+    opacity: 1;
+  }
+
+  .honoree:hover .portrait-wrap { transform: none; }
 }
