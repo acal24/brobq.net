@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>BRO-B-Q</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-  </head>
-  <body>
-    <h1>Welcome to BRO-B-Q</h1>
-  </body>
-  </html>
-  
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="description" content="BRO-B-Q — Smoke. Stories. Brotherhood. Est. MMXXII." />
+  <title>BRO-B-Q</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+  <main>
+    <section id="gate" class="gate" aria-label="BRO-B-Q entrance">
+      <div class="gate-shade"></div>
+      <div class="gate-glow" aria-hidden="true"></div>
+      <div class="gate-inner">
+        <p class="kicker">Est. MMXXII</p>
+        <h1>BRO-B-Q</h1>
+        <p class="tagline">Smoke. Stories. Brotherhood.</p>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="gate-note">The pit is invitation only.</p>
+        <p class="prompt">Speak the phrase.</p>
+        <form id="phrase-form" class="phrase-form" novalidate>
+          <label class="sr-only" for="phrase">Speak the phrase</label>
+          <input id="phrase" name="phrase" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="gate-message" />
+          <button type="submit">Enter</button>
+        </form>
+        <p id="gate-message" class="gate-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="clubhouse" class="clubhouse" hidden>
+      <div class="clubhouse-inner">
+        <p class="kicker">Inside the Pit</p>
+        <h2>BRO-B-Q</h2>
+        <nav class="clubhouse-nav" aria-label="BRO-B-Q sections">
+          <a href="v/">Edition V <span>2026</span></a>
+          <a href="#hall">Hall of Fame <span>Coming Soon</span></a>
+          <a href="#charter">The Charter <span>Coming Soon</span></a>
+          <a href="#locker">The Locker <span>Coming Soon</span></a>
+          <a href="#pit">The Pit <span>Coming Soon</span></a>
+        </nav>
+        <button id="reset-gate" class="reset-gate" type="button">Return to the door</button>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>
