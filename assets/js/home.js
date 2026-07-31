@@ -1,5 +1,8 @@
 (() => {
-  const PHRASE = "pepperoni";
+  const VALID_PHRASES = [
+  "pepperoni",
+  "rudy"
+];
   const STORAGE_KEY = "brobq_admitted";
   const SUCCESS_HOLD_MS = 2000;
   const FADE_MS = 900;
@@ -79,7 +82,7 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (normalize(input.value) === PHRASE) {
+if (VALID_PHRASES.includes(normalize(input.value))) {
       localStorage.setItem(STORAGE_KEY, "true");
       showClubhouse({ animate: true });
       return;
