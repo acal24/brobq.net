@@ -1,1 +1,96 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>The Keeper's Code</title><link rel="stylesheet" href="style.css"></head><body><div id="gate" class="center"><h1>THE KEEPER'S CODE</h1><p class="quote">Traditions don't survive by accident.<br>They survive because someone chooses to keep them.</p><input id="phrase" type="password" placeholder="Enter the phrase"><br><button onclick="unlock()">Enter</button><p id="msg"></p></div><div id="content" class="wrap hidden"><h1>THE KEEPER'S CODE</h1><p>The Keeper's Code exists to preserve BRO-B-Q.</p><h2>The Keeper's Oath</h2><blockquote><p>We preserve more than files.</p><p>We preserve standards.</p><p>We preserve stories.</p><p>We preserve the details that become tradition.</p><p><strong>Leave it stronger than you found it.</strong></p></blockquote><h2>The Shelf</h2><ol><li>Brand Book</li><li>Editorial Constitution</li><li>Master Logo</li><li>Design System</li><li>Archive Standards</li><li>Print & Merchandise</li><li>Digital Assets</li><li>Event Operations</li><li>Change Log</li></ol><p><a class="button" href="GOOGLE_DRIVE_LINK_HERE" target="_blank">Open The Shelf</a></p></div><script>const PASS="CHANGE_THIS_PHRASE";function unlock(){let p=document.getElementById("phrase").value;if(p===PASS){gate.classList.add("hidden");content.classList.remove("hidden");}else{document.getElementById("msg").textContent="Only the keepers know the way.";}}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>The Keeper's Code</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="gate" class="center">
+    <h1>THE KEEPER'S CODE</h1>
+
+    <p class="quote">
+      Traditions don't survive by accident.<br>
+      They survive because someone chooses to keep them.
+    </p>
+
+    <input
+      id="phrase"
+      type="password"
+      placeholder="Enter the phrase"
+    >
+
+    <br>
+
+    <button onclick="unlock()">Enter</button>
+
+    <p id="msg"></p>
+  </div>
+
+  <div id="content" class="wrap hidden">
+    <h1>THE KEEPER'S CODE</h1>
+
+    <p>
+      The Keeper's Code exists to preserve BRO-B-Q.
+    </p>
+
+    <h2>The Keeper's Oath</h2>
+
+    <blockquote>
+      <p>We preserve more than files.</p>
+      <p>We preserve standards.</p>
+      <p>We preserve stories.</p>
+      <p>We preserve the details that become tradition.</p>
+      <p><strong>Leave it stronger than you found it.</strong></p>
+    </blockquote>
+
+    <h2>The Shelf</h2>
+
+    <ol>
+      <li>Brand Book</li>
+      <li>Editorial Constitution</li>
+      <li>Master Logo</li>
+      <li>Design System</li>
+      <li>Archive Standards</li>
+      <li>Print &amp; Merchandise</li>
+      <li>Digital Assets</li>
+      <li>Event Operations</li>
+      <li>Change Log</li>
+    </ol>
+
+    <p>
+      <a
+        class="button"
+        href="GOOGLE_DRIVE_LINK_HERE"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open The Shelf
+      </a>
+    </p>
+  </div>
+
+  <script>
+    const PASS = "CHANGE_THIS_PHRASE";
+
+    function unlock() {
+      const enteredPhrase = document.getElementById("phrase").value;
+
+      if (enteredPhrase === PASS) {
+        document.getElementById("gate").classList.add("hidden");
+        document.getElementById("content").classList.remove("hidden");
+      } else {
+        document.getElementById("msg").textContent =
+          "Only the keepers know the way.";
+      }
+    }
+  </script>
+
+</body>
+</html>
