@@ -1,0 +1,66 @@
+:root{
+  --pit:#0e0e0e;
+  --bone:#f2efe6;
+  --smoke:#68655f;
+  --ash:#c9c2b6;
+  --bourbon:#a96b2b;
+  --rule:rgba(242,239,230,.16);
+}
+*{box-sizing:border-box}
+html{background:var(--pit);color:var(--bone);scroll-behavior:smooth}
+body{margin:0;background:var(--pit);color:var(--bone);font-family:Inter,system-ui,sans-serif}
+a{color:inherit}
+main{width:min(1120px,100%);margin:0 auto;padding:0 22px}
+.back-link,.artifact-link{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ash)}
+.back-link:hover,.artifact-link:hover{color:var(--bourbon)}
+.eyebrow,.artifact-meta,.artifact-type,.status{font-size:.68rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
+.eyebrow,.artifact-meta{color:var(--ash)}
+.locker-hero,.garage-hero{min-height:72svh;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--rule);position:relative}
+.locker-hero .back-link,.garage-hero .back-link{position:absolute;top:30px;left:0}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;margin:0;font-weight:600}
+h1{font-size:clamp(4rem,12vw,8rem);line-height:.88;letter-spacing:-.045em}
+.hero-line{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.45rem,4vw,2.25rem);font-style:italic;color:var(--ash);margin:22px 0 0}
+.intro,.garage-note{padding:72px 0;border-bottom:1px solid var(--rule);font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.15}
+.intro p,.garage-note p{margin:.2em 0}
+.collection,.legacy,.bench{padding:86px 0 0}
+.section-heading{margin-bottom:38px}
+.section-heading h2{font-size:clamp(2.4rem,6vw,4.5rem);line-height:.95;max-width:760px}
+.artifact{display:grid;grid-template-columns:1fr 1.15fr;gap:46px;align-items:center;padding:54px 0;border-top:1px solid var(--rule)}
+.artifact--image-right .artifact-copy{order:1}.artifact--image-right figure{order:2}
+.artifact figure,.legacy-card figure{margin:0;overflow:hidden;background:#151515}
+.artifact img,.legacy-card img{display:block;width:100%;height:100%;max-height:560px;object-fit:cover}
+.artifact h3,.legacy-card h3,.concept-card h3{font-size:clamp(2.2rem,5vw,4rem);line-height:.95;margin:8px 0 12px}
+.artifact-type{color:var(--bourbon);margin:0 0 22px}
+.artifact-copy>p:not(.artifact-meta):not(.artifact-type),.legacy-copy>p,.concept-card p{color:var(--ash);line-height:1.7;max-width:560px}
+.artifact-link{display:inline-block;margin-top:18px}
+.artifact--pending{min-height:360px}.pending-mark{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(8rem,22vw,17rem);text-align:center;color:rgba(242,239,230,.06);line-height:1}
+.quiet{color:var(--smoke)!important}
+.legacy{padding-bottom:70px}
+.legacy-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center;padding:54px 0;border-top:1px solid var(--rule)}
+.legacy-images{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cup-card{grid-template-columns:1.1fr .9fr}
+.locker-footer,.garage-footer{padding:70px 0 36px;border-top:1px solid var(--rule);text-align:center;color:var(--smoke);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;position:relative}
+.garage-key{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;margin-top:30px;text-decoration:none;color:var(--bourbon);opacity:.20;font-size:20px;transition:opacity .2s ease,transform .2s ease}
+.garage-key:hover,.garage-key:focus-visible{opacity:.85;transform:rotate(-8deg)}
+.garage-page{background:radial-gradient(circle at 75% 15%,rgba(169,107,43,.08),transparent 34%),var(--pit)}
+.garage-hero h1{max-width:900px}
+.bench{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-bottom:60px}
+.bench .section-heading{grid-column:1/-1}
+.concept-card{min-height:310px;border:1px solid var(--rule);padding:34px;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(242,239,230,.018)}
+.concept-card--empty{border-style:dashed}
+.status{color:var(--bourbon);margin-bottom:auto}
+.status-key{border-top:1px solid var(--rule);padding:46px 0 76px;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;color:var(--smoke);font-size:.8rem}
+.status-key p{margin:0}.status-key strong{color:var(--ash);font-weight:500}
+@media(max-width:720px){
+  main{padding:0 18px}
+  .locker-hero,.garage-hero{min-height:68svh}
+  .artifact,.legacy-card,.cup-card{grid-template-columns:1fr;gap:24px;padding:40px 0}
+  .artifact--image-right .artifact-copy,.artifact--image-right figure{order:initial}
+  .artifact figure{order:-1!important}
+  .legacy-images{gap:8px}
+  .bench{grid-template-columns:1fr}
+  .bench .section-heading{grid-column:auto}
+  .concept-card{min-height:250px;padding:26px}
+  .status-key{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.garage-key{transition:none}}
