@@ -4,6 +4,8 @@ html{background:var(--pit);color:var(--bone);scroll-behavior:smooth}
 body{margin:0;background:var(--pit);font-family:Inter,system-ui,sans-serif;line-height:1.6}
 img{display:block;width:100%;height:auto}
 a{color:inherit;text-decoration:none}
+.back-link{display:inline-block;margin-bottom:3rem;color:rgba(242,239,230,.68);font-size:.69rem;letter-spacing:.16em;text-transform:uppercase}
+.back-link:hover,.back-link:focus-visible{color:var(--bourbon)}
 .hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,14,.1),rgba(14,14,14,.28) 42%,rgba(14,14,14,.94))}
