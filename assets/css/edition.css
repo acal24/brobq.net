@@ -22,6 +22,7 @@ blockquote p{margin:.35em 0}
 .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.65rem,1.5vw,1.4rem);width:min(1200px,94vw);margin:0 auto;padding:0 0 clamp(5rem,10vw,9rem)}
 .gallery figure{margin:0;overflow:hidden;background:#171717}
 .gallery .wide{grid-column:1/-1}
+.gallery .portrait{grid-column:1/-1;width:min(620px,100%);justify-self:center}
 .gallery img{height:100%;min-height:320px;object-fit:cover}
 .gallery .wide img{max-height:760px}
 .artifact{text-align:center}
@@ -37,5 +38,5 @@ blockquote p{margin:.35em 0}
 .edition-nav a:hover,.edition-nav a:focus-visible{color:var(--bourbon)}
 .poster-link{display:inline-block;margin-top:2rem;border:1px solid var(--bourbon);padding:.8rem 1rem;color:var(--bone);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
 .poster-link:hover,.poster-link:focus-visible{background:var(--bourbon)}
-@media(max-width:650px){.hero>img{object-position:center}.gallery{grid-template-columns:1fr}.gallery .wide{grid-column:auto}.gallery img{min-height:0;aspect-ratio:4/5}.gallery .wide img{aspect-ratio:4/3}.artifact-pair{grid-template-columns:1fr}.edition-nav{flex-direction:column;align-items:center}.section,.closing{width:min(88vw,680px)}}
+@media(max-width:650px){.hero>img{object-position:center}.gallery{grid-template-columns:1fr}.gallery .wide,.gallery .portrait{grid-column:auto;width:100%}.gallery img{min-height:0;aspect-ratio:4/5}.gallery .wide img{aspect-ratio:4/3}.artifact-pair{grid-template-columns:1fr}.edition-nav{flex-direction:column;align-items:center}.section,.closing{width:min(88vw,680px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
