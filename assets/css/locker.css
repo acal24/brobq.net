@@ -29,6 +29,8 @@ h1{font-size:clamp(4rem,12vw,8rem);line-height:.88;letter-spacing:-.045em}
 .artifact--image-right .artifact-copy{order:1}.artifact--image-right figure{order:2}
 .artifact figure,.legacy-card figure{margin:0;overflow:hidden;background:#151515}
 .artifact img,.legacy-card img{display:block;width:100%;height:100%;max-height:560px;object-fit:cover}
+.artifact--towel figure{aspect-ratio:4/3}
+.artifact--towel img{transform:scale(1.55);object-position:50% 62%}
 .artifact h3,.legacy-card h3,.concept-card h3{font-size:clamp(2.2rem,5vw,4rem);line-height:.95;margin:8px 0 12px}
 .artifact-type{color:var(--bourbon);margin:0 0 22px}
 .artifact-copy>p:not(.artifact-meta):not(.artifact-type),.legacy-copy>p,.concept-card p{color:var(--ash);line-height:1.7;max-width:560px}
@@ -38,7 +40,12 @@ h1{font-size:clamp(4rem,12vw,8rem);line-height:.88;letter-spacing:-.045em}
 .legacy{padding-bottom:70px}
 .legacy-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center;padding:54px 0;border-top:1px solid var(--rule)}
 .legacy-images{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rack-lineage{display:grid;gap:30px}
+.rack-entry{display:grid;gap:10px}
+.rack-label{margin:0;color:var(--bourbon);font-size:.68rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
 .cup-card{grid-template-columns:1.1fr .9fr}
+.cup-cutout{background:radial-gradient(circle at 50% 48%,rgba(169,107,43,.13),rgba(21,21,21,0) 68%),#151515!important}
+.cup-cutout img{object-fit:contain;padding:clamp(18px,4vw,44px)}
 .locker-footer,.garage-footer{padding:70px 0 36px;border-top:1px solid var(--rule);text-align:center;color:var(--smoke);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;position:relative}
 .garage-key{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;margin-top:30px;text-decoration:none;color:var(--bourbon);opacity:.20;font-size:20px;transition:opacity .2s ease,transform .2s ease}
 .garage-key:hover,.garage-key:focus-visible{opacity:.85;transform:rotate(-8deg)}
