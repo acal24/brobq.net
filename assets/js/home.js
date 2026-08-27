@@ -96,11 +96,13 @@ if (VALID_PHRASES.includes(normalize(input.value))) {
     input.select();
   });
 
-  chaptersOpen.addEventListener("click", () => {
-    clubhouse.hidden = true;
-    chapters.hidden = false;
-    forceTop();
-  });
+  if (chaptersOpen) {
+    chaptersOpen.addEventListener("click", () => {
+      clubhouse.hidden = true;
+      chapters.hidden = false;
+      forceTop();
+    });
+  }
 
   chaptersBack.addEventListener("click", () => {
     chapters.hidden = true;
